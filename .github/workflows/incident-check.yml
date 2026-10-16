@@ -1,0 +1,23 @@
+
+name: Synthetic Incident Check
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  incident-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run synthetic incident check
+        run: |
+          python -c "print('Synthetic incident check started')"
+          python -c "assert 500 == 200, 'Synthetic test failure: expected latency threshold was exceeded'"
