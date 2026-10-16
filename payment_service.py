@@ -11,3 +11,4 @@ def get_pool_config():
         "pool_size": DEFAULT_POOL_SIZE,
         "max_latency_ms": MAX_REQUEST_LATENCY_MS,
     }
+# Test update to trigger the pull request workflow.
